@@ -5,54 +5,64 @@ import { Gift, FileText, Users, Calculator, MessageCircle, Zap } from 'lucide-re
 
 export default function Bonuses() {
   const bonuses = [
-    { title: "Trading Blueprint (PDF)", desc: "Step-by-step setup guide for 2026 markets.", icon: FileText },
-    { title: "Private Community Access", desc: "Join our elite circle of 15,000+ traders.", icon: Users },
-    { title: "Risk Calculator", desc: "Automate your position sizing instantly.", icon: Calculator },
-    { title: "Live Q&A Session", desc: "Get direct answers from Leena & Ajay.", icon: MessageCircle }
+    { title: "Trading Blueprint (PDF)", desc: "Step-by-step setup guide for 2026 markets.", icon: FileText, color: "emerald" },
+    { title: "Private Community Access", desc: "Join our elite circle of 15,000+ traders.", icon: Users, color: "blue" },
+    { title: "Risk Calculator", desc: "Automate your position sizing instantly.", icon: Calculator, color: "violet" },
+    { title: "Live Q&A Session", desc: "Get direct answers from Leena & Ajay.", icon: MessageCircle, color: "amber" }
   ];
 
+  const colorClasses: Record<string, { bg: string; icon: string }> = {
+    emerald: { bg: "bg-emerald-500", icon: "text-white" },
+    blue: { bg: "bg-blue-500", icon: "text-white" },
+    violet: { bg: "bg-violet-500", icon: "text-white" },
+    amber: { bg: "bg-amber-500", icon: "text-white" },
+  };
+
   return (
-    <section className="section-spacing bg-white">
+    <section className="py-16 md:py-24 bg-slate-50">
       <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto text-center mb-10 md:mb-16">
-          <div className="inline-flex items-center gap-2 bg-brand-yellow px-4 py-1.5 rounded-full text-black text-xs md:text-sm font-black uppercase tracking-widest mb-4">
+        <div className="max-w-4xl mx-auto text-center mb-10 md:mb-14">
+          <div className="inline-flex items-center gap-2 bg-emerald-500 text-white px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider mb-6">
             <Gift className="w-4 h-4" /> Fast Action Bonuses
           </div>
-          <h2 className="text-black text-[32px] md:text-[64px] font-black uppercase leading-tight tracking-tighter">
-            ₹40,000 Worth of <br /> <span className="text-brand-red">Bonuses FREE</span>
+          <h2 className="text-slate-900 text-[28px] md:text-[48px] font-black leading-tight tracking-tight">
+            ₹40,000 Worth of <span className="text-emerald-500">Bonuses FREE</span>
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mb-12 md:mb-20">
-          {bonuses.map((bonus, idx) => (
-            <div key={idx} className="bg-brand-yellow/5 border-2 border-brand-yellow/20 p-6 md:p-8 rounded-[2rem] text-center group hover:border-brand-yellow transition-all">
-              <div className="w-14 h-14 bg-brand-yellow rounded-2xl flex items-center justify-center mb-6 mx-auto text-black shadow-lg shadow-brand-yellow/20 group-hover:scale-110 transition-transform">
-                <bonus.icon className="w-7 h-7" />
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mb-12 md:mb-16 max-w-5xl mx-auto">
+          {bonuses.map((bonus, idx) => {
+            const colors = colorClasses[bonus.color];
+            return (
+              <div key={idx} className="bg-white border border-slate-200 p-6 rounded-2xl text-center group hover:shadow-lg transition-all">
+                <div className={`w-14 h-14 ${colors.bg} rounded-2xl flex items-center justify-center mb-5 mx-auto ${colors.icon} shadow-lg group-hover:scale-110 transition-transform`}>
+                  <bonus.icon className="w-7 h-7" />
+                </div>
+                <h3 className="text-slate-900 font-black text-base mb-2">{bonus.title}</h3>
+                <p className="text-slate-500 text-sm leading-snug">{bonus.desc}</p>
               </div>
-              <h3 className="text-black font-black text-lg md:text-xl mb-2 uppercase tracking-tight">{bonus.title}</h3>
-              <p className="text-black/60 font-bold text-sm leading-snug">{bonus.desc}</p>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
-        <div className="bg-black p-8 md:p-16 rounded-[2.5rem] text-center max-w-4xl mx-auto relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-32 h-32 bg-brand-red/10 blur-3xl rounded-full"></div>
-          <div className="absolute bottom-0 left-0 w-32 h-32 bg-brand-yellow/10 blur-3xl rounded-full"></div>
+        <div className="bg-slate-900 p-8 md:p-14 rounded-3xl text-center max-w-3xl mx-auto relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-48 h-48 bg-emerald-500/10 blur-3xl rounded-full"></div>
+          <div className="absolute bottom-0 left-0 w-48 h-48 bg-amber-500/10 blur-3xl rounded-full"></div>
           
           <div className="relative z-10">
-            <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 mb-10">
-              <span className="text-5xl md:text-8xl font-black text-white tracking-tighter">₹299</span>
+            <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 mb-8">
+              <span className="text-5xl md:text-7xl font-black text-white tracking-tighter">₹299</span>
               <div className="text-left leading-tight">
-                <span className="block text-white/40 line-through text-base md:text-xl font-black">₹40,000+ VALUE</span>
-                <span className="block text-brand-yellow font-black text-lg md:text-2xl uppercase tracking-widest">Everything Included</span>
+                <span className="block text-slate-500 line-through text-base font-bold">₹40,000+ VALUE</span>
+                <span className="block text-emerald-400 font-black text-lg uppercase tracking-wider">Everything Included</span>
               </div>
             </div>
             
             <a 
               href="#register" 
-              className="btn-primary w-full sm:w-auto text-xl md:text-3xl px-10 md:px-20 py-5 md:py-8"
+              className="inline-flex items-center gap-2 bg-gradient-to-r from-emerald-500 to-teal-500 text-white font-black text-lg md:text-xl px-10 md:px-14 py-4 md:py-5 rounded-full shadow-lg shadow-emerald-500/30 hover:shadow-emerald-500/50 transition-all hover:scale-105"
             >
-              <Zap className="w-6 h-6 md:w-8 md:h-8 fill-white" />
+              <Zap className="w-5 h-5" />
               Claim All Bonuses Now
             </a>
           </div>
