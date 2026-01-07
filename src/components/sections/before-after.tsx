@@ -1,66 +1,75 @@
 "use client";
 
 import React from 'react';
-import { XCircle, CheckCircle2, ArrowRight } from 'lucide-react';
 
 const BeforeAfter: React.FC = () => {
-  const before = [
-    "Confusion with too many indicators",
-    "Trading based on random tips",
-    "Small profits, big losses",
-    "No clear entry or exit plan"
+  const beforePoints = [
+    "Struggling to understand stock market basics",
+    "Unsure when to buy or sell stocks",
+    "Fear of losing money due to lack of knowledge",
+    "No clear strategy for consistent profits",
+    "Confused about Price Action, Support & Resistance",
+    "Unable to mark key zones or identify trends",
+    "No understanding of Multiple Time Frame Analysis",
+    "Unsure how to interpret candlestick patterns",
+    "Finding chart patterns complicated",
+    "Overwhelmed by technical indicators",
+    "Not confident in selecting the right stocks",
+    "No structure for intraday or swing trading",
+    "Lack of psychological discipline while trading"
   ];
 
-  const after = [
-    "Clarity with Price Action",
-    "Independent decision making",
-    "Controlled risk, consistent gains",
-    "Rule-based trading system"
+  const afterPoints = [
+    "Confident in reading charts using Price Action & S/R",
+    "Able to mark High Support and Resistance Zones",
+    "Comfortable using Multiple Time Frame Analysis",
+    "Clear understanding of Trend Analysis using S/R",
+    "Skillful in applying Risk-to-Reward Ratio",
+    "Capable of analyzing strong candlestick signals",
+    "Able to identify and trade powerful chart patterns",
+    "Know how to use key Technical Indicators effectively",
+    "Improved trading psychology and emotional control",
+    "Learn practical, real-market Trading Strategies",
+    "Master execution techniques for Intraday & Swing",
+    "Confident in stock selection using StockEdge",
+    "Know how to choose stocks for long-term investing",
+    "Trade with a structured, rule-based approach"
   ];
 
   return (
-    <section className="section-spacing bg-white">
-      <div className="container">
-        <div className="max-w-3xl mx-auto text-center mb-8 md:mb-12">
-          <div className="text-brand-gold text-[10px] font-bold uppercase tracking-widest mb-2">The Transformation</div>
-          <h2 className="text-brand-navy text-2xl md:text-4xl">From Confusion to Clarity</h2>
+    <section className="bg-white overflow-hidden">
+      <div className="grid grid-cols-1 md:grid-cols-2">
+        {/* Before Column */}
+        <div className="bg-[#E5E5E5] px-6 md:px-20 py-12 md:py-24">
+          <h2 className="text-black text-[40px] md:text-[80px] font-black leading-none mb-4 uppercase tracking-tighter">BEFORE</h2>
+          <h3 className="text-black text-[18px] md:text-[32px] font-light leading-tight mb-10 md:mb-16 uppercase tracking-[0.2em]">STOCK MARKET TRADING MASTERCLASS</h3>
+          
+          <ul className="space-y-3 md:space-y-4">
+            {beforePoints.map((point, i) => (
+              <li key={i} className="flex items-start gap-3">
+                <span className="text-black text-xl leading-none mt-1">•</span>
+                <span className="text-black font-bold text-[14px] md:text-[18px] leading-snug">{point}</span>
+              </li>
+            ))}
+          </ul>
         </div>
 
-        <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
-          <div className="bg-red-50/50 border border-red-100 p-6 rounded-2xl">
-            <h3 className="text-red-600 font-bold text-sm uppercase tracking-wider mb-4 flex items-center gap-2">
-              <XCircle className="w-4 h-4" />
-              Before Workshop
-            </h3>
-            <ul className="space-y-3">
-              {before.map((item, i) => (
-                <li key={i} className="flex items-start gap-3 text-[13px] md:text-sm text-slate-600 font-medium">
-                  <span className="mt-1 w-1 h-1 rounded-full bg-red-400 flex-shrink-0"></span>
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </div>
+        {/* After Column */}
+        <div className="bg-brand-yellow px-6 md:px-20 py-12 md:py-24 relative">
+          <h2 className="text-black text-[40px] md:text-[80px] font-black leading-none mb-4 uppercase tracking-tighter">AFTER</h2>
+          <h3 className="text-black text-[18px] md:text-[32px] font-light leading-tight mb-10 md:mb-16 uppercase tracking-[0.2em]">STOCK MARKET TRADING MASTERCLASS</h3>
+          
+          <ul className="space-y-3 md:space-y-4">
+            {afterPoints.map((point, i) => (
+              <li key={i} className="flex items-start gap-3">
+                <span className="text-black text-xl leading-none mt-1">•</span>
+                <span className="text-black font-bold text-[14px] md:text-[18px] leading-snug">{point}</span>
+              </li>
+            ))}
+          </ul>
 
-          <div className="hidden md:flex justify-center -mx-4 z-10">
-            <div className="bg-brand-gold text-brand-navy p-2 rounded-full shadow-lg">
-              <ArrowRight className="w-5 h-5" />
-            </div>
-          </div>
-
-          <div className="bg-brand-navy border border-brand-gold/20 p-6 rounded-2xl shadow-xl">
-            <h3 className="text-brand-gold font-bold text-sm uppercase tracking-wider mb-4 flex items-center gap-2">
-              <CheckCircle2 className="w-4 h-4" />
-              After Workshop
-            </h3>
-            <ul className="space-y-3">
-              {after.map((item, i) => (
-                <li key={i} className="flex items-start gap-3 text-[13px] md:text-sm text-white/80 font-medium">
-                  <span className="mt-1 w-1 h-1 rounded-full bg-brand-gold flex-shrink-0"></span>
-                  {item}
-                </li>
-              ))}
-            </ul>
+          <div className="absolute bottom-10 right-10 opacity-20">
+            <span className="text-black text-[64px] md:text-[120px] font-black italic">04</span>
           </div>
         </div>
       </div>
