@@ -1,55 +1,56 @@
 "use client";
 
 import React from 'react';
-import { Mail, Instagram, Facebook, Youtube } from 'lucide-react';
+import Image from 'next/image';
+import { Mail, Phone, Instagram, Facebook, Youtube } from 'lucide-react';
 
 export default function Footer() {
   return (
-    <footer className="bg-slate-900 pt-12 pb-24 md:pb-12 text-white">
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10">
+    <footer className="bg-brand-navy pt-8 pb-20 md:pb-8 text-white border-t border-brand-gold/20">
+      <div className="container">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
           <div className="md:col-span-1">
-            <img 
+            <Image 
               src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/project-uploads/8e8d2229-4af9-4423-918e-4e2d30a6aef9/logo-1767825248382.png?width=8000&height=8000&resize=contain"
               alt="Trading Powerhouse"
               width={160}
               height={50}
-              className="h-10 md:h-12 w-auto brightness-0 invert mb-4"
+              className="h-10 md:h-12 w-auto brightness-0 invert mb-3"
             />
-            <p className="text-slate-400 text-sm leading-relaxed max-w-xs">
-              Empowering traders with institutional logic and disciplined risk management. Join the elite group of profitable traders.
+            <p className="text-white/40 text-[10px] md:text-xs leading-relaxed max-w-xs uppercase font-bold tracking-tight">
+              Empowering traders with institutional logic and disciplined risk management. Join the elite 1% of profitable traders.
             </p>
           </div>
 
           <div>
-            <h4 className="text-sm font-bold mb-4 uppercase tracking-wider text-emerald-400">Quick Links</h4>
-            <div className="grid grid-cols-2 gap-2 text-slate-400 text-sm">
-              <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-              <a href="#" className="hover:text-white transition-colors">Terms of Use</a>
-              <a href="#" className="hover:text-white transition-colors">Refund Policy</a>
-              <a href="#" className="hover:text-white transition-colors">Contact Us</a>
+            <h4 className="text-[11px] md:text-sm font-black mb-3 uppercase tracking-widest text-brand-gold">Quick Links</h4>
+            <div className="grid grid-cols-2 gap-1.5 text-white/60 text-[10px] md:text-xs font-bold uppercase">
+              <a href="#" className="hover:text-brand-gold transition-colors">Privacy</a>
+              <a href="#" className="hover:text-brand-gold transition-colors">Terms</a>
+              <a href="#" className="hover:text-brand-gold transition-colors">Refunds</a>
+              <a href="#" className="hover:text-brand-gold transition-colors">Contact</a>
             </div>
           </div>
 
           <div className="flex flex-col items-start md:items-end">
-            <h4 className="text-sm font-bold mb-4 uppercase tracking-wider text-emerald-400">Connect With Us</h4>
-            <div className="flex items-center gap-3 mb-4">
-              <a href="#" className="bg-slate-800 p-2 rounded-full text-slate-400 hover:bg-emerald-500 hover:text-white transition-all"><Instagram className="w-4 h-4" /></a>
-              <a href="#" className="bg-slate-800 p-2 rounded-full text-slate-400 hover:bg-emerald-500 hover:text-white transition-all"><Facebook className="w-4 h-4" /></a>
-              <a href="#" className="bg-slate-800 p-2 rounded-full text-slate-400 hover:bg-emerald-500 hover:text-white transition-all"><Youtube className="w-4 h-4" /></a>
+            <h4 className="text-[11px] md:text-sm font-black mb-3 uppercase tracking-widest text-brand-gold">Connect</h4>
+            <div className="flex items-center gap-3 mb-3">
+              <a href="#" className="text-white/40 hover:text-brand-gold transition-all"><Instagram className="w-4 h-4" /></a>
+              <a href="#" className="text-white/40 hover:text-brand-gold transition-all"><Facebook className="w-4 h-4" /></a>
+              <a href="#" className="text-white/40 hover:text-brand-gold transition-all"><Youtube className="w-4 h-4" /></a>
             </div>
-            <div className="flex items-center gap-2 text-slate-400 text-sm">
-              <Mail className="w-4 h-4 text-emerald-400" />
+            <div className="flex items-center gap-2 text-white/40 text-[9px] font-black uppercase tracking-tight">
+              <Mail className="w-3 h-3 text-brand-gold" />
               support@tradingpowerhouse.in
             </div>
           </div>
         </div>
 
-        <div className="pt-8 border-t border-slate-800 text-center">
-          <p className="text-slate-500 text-xs mb-3 max-w-2xl mx-auto leading-relaxed">
-            Stock Market investments are subject to market risks. Please read all relevant documents before investing. We do not provide tips or guaranteed returns.
+        <div className="pt-6 border-t border-white/5 text-center">
+          <p className="text-white/20 text-[8px] md:text-[9px] uppercase tracking-widest mb-2 max-w-2xl mx-auto font-bold">
+            Stock Market investment are subject to market risks. Please read all relevant documents before investing.
           </p>
-          <p className="text-slate-600 text-xs">
+          <p className="text-white/40 text-[9px] md:text-[10px] font-black uppercase tracking-tighter">
             © 2026 Trading Powerhouse. All Rights Reserved.
           </p>
         </div>

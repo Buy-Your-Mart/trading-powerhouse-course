@@ -1,7 +1,6 @@
 "use client";
 
 import React from 'react';
-import { X, Check } from 'lucide-react';
 
 const BeforeAfter: React.FC = () => {
   const beforePoints = [
@@ -40,42 +39,38 @@ const BeforeAfter: React.FC = () => {
   return (
     <section className="bg-white overflow-hidden">
       <div className="grid grid-cols-1 md:grid-cols-2">
-        <div className="bg-slate-100 px-6 md:px-16 py-12 md:py-20">
-          <div className="flex items-center gap-3 mb-8">
-            <div className="bg-rose-500 rounded-full p-2">
-              <X className="w-5 h-5 text-white" strokeWidth={3} />
-            </div>
-            <h2 className="text-slate-900 text-[32px] md:text-[48px] font-black leading-none uppercase tracking-tight">Before</h2>
-          </div>
-          <p className="text-slate-500 text-sm font-bold uppercase tracking-wider mb-8">Without the Masterclass</p>
+        {/* Before Column */}
+        <div className="bg-[#E5E5E5] px-6 md:px-20 py-12 md:py-24">
+          <h2 className="text-black text-[40px] md:text-[80px] font-black leading-none mb-4 uppercase tracking-tighter">BEFORE</h2>
+          <h3 className="text-black text-[18px] md:text-[32px] font-light leading-tight mb-10 md:mb-16 uppercase tracking-[0.2em]">STOCK MARKET TRADING MASTERCLASS</h3>
           
-          <ul className="space-y-3">
+          <ul className="space-y-3 md:space-y-4">
             {beforePoints.map((point, i) => (
-              <li key={i} className="flex items-start gap-3 p-3 bg-white/60 rounded-xl">
-                <span className="text-rose-500 text-lg mt-0.5">•</span>
-                <span className="text-slate-700 font-medium text-[14px] md:text-[15px] leading-snug">{point}</span>
+              <li key={i} className="flex items-start gap-3">
+                <span className="text-black text-xl leading-none mt-1">•</span>
+                <span className="text-black font-bold text-[14px] md:text-[18px] leading-snug">{point}</span>
               </li>
             ))}
           </ul>
         </div>
 
-        <div className="bg-emerald-50 px-6 md:px-16 py-12 md:py-20">
-          <div className="flex items-center gap-3 mb-8">
-            <div className="bg-emerald-500 rounded-full p-2">
-              <Check className="w-5 h-5 text-white" strokeWidth={3} />
-            </div>
-            <h2 className="text-slate-900 text-[32px] md:text-[48px] font-black leading-none uppercase tracking-tight">After</h2>
-          </div>
-          <p className="text-emerald-600 text-sm font-bold uppercase tracking-wider mb-8">After the Masterclass</p>
+        {/* After Column */}
+        <div className="bg-brand-yellow px-6 md:px-20 py-12 md:py-24 relative">
+          <h2 className="text-black text-[40px] md:text-[80px] font-black leading-none mb-4 uppercase tracking-tighter">AFTER</h2>
+          <h3 className="text-black text-[18px] md:text-[32px] font-light leading-tight mb-10 md:mb-16 uppercase tracking-[0.2em]">STOCK MARKET TRADING MASTERCLASS</h3>
           
-          <ul className="space-y-3">
+          <ul className="space-y-3 md:space-y-4">
             {afterPoints.map((point, i) => (
-              <li key={i} className="flex items-start gap-3 p-3 bg-white/60 rounded-xl">
-                <span className="text-emerald-500 text-lg mt-0.5">✓</span>
-                <span className="text-slate-700 font-medium text-[14px] md:text-[15px] leading-snug">{point}</span>
+              <li key={i} className="flex items-start gap-3">
+                <span className="text-black text-xl leading-none mt-1">•</span>
+                <span className="text-black font-bold text-[14px] md:text-[18px] leading-snug">{point}</span>
               </li>
             ))}
           </ul>
+
+          <div className="absolute bottom-10 right-10 opacity-20">
+            <span className="text-black text-[64px] md:text-[120px] font-black italic">04</span>
+          </div>
         </div>
       </div>
     </section>
