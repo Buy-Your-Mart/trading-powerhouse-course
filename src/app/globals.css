@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesk:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Space+Grotesk:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesk:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
 @import "tailwindcss";
 @import "tw-animate-css";
 
@@ -6,38 +6,38 @@
 
 @theme {
   --color-background: #ffffff;
-  --color-foreground: #000000;
+  --color-foreground: #001f3f;
 
   --color-card: #ffffff;
-  --color-card-foreground: #000000;
+  --color-card-foreground: #001f3f;
 
   --color-popover: #ffffff;
-  --color-popover-foreground: #000000;
+  --color-popover-foreground: #001f3f;
 
-  --color-primary: #000000;
+  --color-primary: #001f3f;
   --color-primary-foreground: #ffffff;
 
-  --color-secondary: #f6c343;
-  --color-secondary-foreground: #000000;
+  --color-secondary: #fdfaf3;
+  --color-secondary-foreground: #001f3f;
 
   --color-muted: #f4f7fa;
   --color-muted-foreground: #718096;
 
-  --color-accent: #f6c343;
-  --color-accent-foreground: #000000;
+  --color-accent: #c5a059;
+  --color-accent-foreground: #ffffff;
 
-  --color-destructive: #e31e24;
+  --color-destructive: #cc0000;
   --color-destructive-foreground: #ffffff;
 
   --color-border: #e2e8f0;
   --color-input: #e2e8f0;
-  --color-ring: #f6c343;
+  --color-ring: #c5a059;
 
-  --color-brand-yellow: #f6c343;
-  --color-brand-red: #e31e24;
-  --color-brand-black: #000000;
   --color-brand-navy: #001f3f;
-  --color-brand-gold: #f6c343;
+  --color-brand-gold: #c5a059;
+  --color-brand-gold-dark: #a6813a;
+  --color-brand-gold-light: #e6c991;
+  --color-brand-red: #cc0000;
 
   --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Space Grotesk", sans-serif;
@@ -48,7 +48,7 @@
   --radius-sm: 4px;
 
   --shadow-premium: 0 10px 30px -5px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-  --shadow-gold: 0 10px 20px -5px rgba(246, 195, 67, 0.3);
+  --shadow-gold: 0 10px 20px -5px rgba(197, 160, 89, 0.3);
 
   --animate-accordion-down: accordion-down 0.2s ease-out;
   --animate-accordion-up: accordion-up 0.2s ease-out;
@@ -82,24 +82,24 @@
 
   :root {
     --background: #ffffff;
-    --foreground: #000000;
+    --foreground: #001f3f;
     --card: #ffffff;
-    --card-foreground: #000000;
+    --card-foreground: #001f3f;
     --popover: #ffffff;
-    --popover-foreground: #000000;
-    --primary: #000000;
+    --popover-foreground: #001f3f;
+    --primary: #001f3f;
     --primary-foreground: #ffffff;
-    --secondary: #f6c343;
-    --secondary-foreground: #000000;
+    --secondary: #fdfaf3;
+    --secondary-foreground: #001f3f;
     --muted: #f4f7fa;
     --muted-foreground: #718096;
-    --accent: #f6c343;
-    --accent-foreground: #000000;
-    --destructive: #e31e24;
+    --accent: #c5a059;
+    --accent-foreground: #ffffff;
+    --destructive: #cc0000;
     --destructive-foreground: #ffffff;
     --border: #e2e8f0;
     --input: #e2e8f0;
-    --ring: #f6c343;
+    --ring: #c5a059;
     --radius: 12px;
   }
 
@@ -111,32 +111,31 @@
     font-family: var(--font-sans);
     background-color: var(--background);
     color: var(--foreground);
-    line-height: 1.4;
+    line-height: 1.5;
     -webkit-font-smoothing: antialiased;
   }
 
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-display);
-    font-weight: 800;
+    font-weight: 700;
     line-height: 1.1;
     color: var(--foreground);
-    letter-spacing: -0.04em;
-    text-transform: uppercase;
+    letter-spacing: -0.03em;
   }
 
   h1 {
-    font-size: clamp(32px, 8vw, 64px);
-    font-weight: 900;
+    font-size: 40px;
+    font-weight: 700;
   }
 
   h2 {
-    font-size: clamp(28px, 6vw, 48px);
-    font-weight: 800;
+    font-size: 32px;
+    color: var(--color-brand-navy);
   }
 
   .container {
     width: 100%;
-    max-width: 1200px;
+    max-width: 1100px;
     margin-left: auto;
     margin-right: auto;
     padding-left: 1rem;
@@ -144,45 +143,49 @@
   }
 
   .btn-primary {
-    background: var(--color-brand-red);
+    background: linear-gradient(135deg, var(--color-brand-gold) 0%, var(--color-brand-gold-dark) 100%);
     color: #ffffff;
-    font-family: var(--font-display);
-    font-weight: 900;
-    font-size: 18px;
-    padding: 1rem 2.5rem;
-    border-radius: 9999px;
+    font-family: var(--font-sans);
+    font-weight: 700;
+    font-size: 16px;
+    padding: 1rem 2rem;
+    border-radius: 8px;
     text-align: center;
-    box-shadow: 0 10px 20px rgba(227, 30, 36, 0.3);
+    box-shadow: var(--shadow-gold);
     transition: all 0.2s ease-in-out;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
+    display: inline-block;
     cursor: pointer;
     border: none;
-    text-transform: uppercase;
-    letter-spacing: 0.02em;
   }
 
   .btn-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 15px 30px rgba(227, 30, 36, 0.4);
-    filter: brightness(1.1);
+    transform: translateY(-1px);
+    box-shadow: 0 12px 24px -5px rgba(197, 160, 89, 0.4);
+    filter: brightness(1.05);
   }
 
   .section-spacing {
-    padding-top: 60px;
-    padding-bottom: 60px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  .glass-card {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(226, 232, 240, 0.8);
+    box-shadow: var(--shadow-premium);
   }
 
   @media (max-width: 768px) {
+    h1 { font-size: 28px; }
+    h2 { font-size: 24px; }
     .section-spacing {
-      padding-top: 40px;
-      padding-bottom: 40px;
+      padding-top: 32px;
+      padding-bottom: 32px;
     }
     .container {
-        padding-left: 1rem;
-        padding-right: 1rem;
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
     }
   }
 }
